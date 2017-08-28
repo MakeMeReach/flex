@@ -1,5 +1,5 @@
 {
-    "name": "symfony/flex",
+    "name": "symfony/hhvm-flex",
     "type": "composer-plugin",
     "license": "MIT",
     "authors": [
