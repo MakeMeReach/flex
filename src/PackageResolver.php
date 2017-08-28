@@ -19,7 +19,7 @@ use Composer\Repository\PlatformRepository;
  */
 class PackageResolver
 {
-    private const SYMFONY_VERSIONS = ['lts', 'previous', 'stable', 'next'];
+    const SYMFONY_VERSIONS = ['lts', 'previous', 'stable', 'next'];
     private static $aliases;
     private static $versions;
     private $downloader;
