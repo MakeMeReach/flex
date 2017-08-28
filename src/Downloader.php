@@ -26,8 +26,8 @@ use Composer\Json\JsonFile;
  */
 class Downloader
 {
-    private const DEFAULT_ENDPOINT = 'https://symfony.sh';
-    private const MAX_LENGTH = 1000;
+    const DEFAULT_ENDPOINT = 'https://symfony.sh';
+    const MAX_LENGTH = 1000;
 
     private $io;
     private $sess;
