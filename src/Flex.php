@@ -299,7 +299,7 @@ class Flex implements PluginInterface, EventSubscriberInterface
         return sprintf('<info>%s</> (<comment>%s</>): From %s', $matches[1], $matches[2], 'auto-generated recipe' === $matches[3] ? '<comment>'.$matches[3].'</>' : $matches[3]);
     }
 
-    public static function getSubscribedEvents(): iterable
+    public static function getSubscribedEvents()
     {
         if (!self::$activated) {
             return [];
