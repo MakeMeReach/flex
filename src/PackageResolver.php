@@ -29,7 +29,7 @@ class PackageResolver
         $this->downloader = $downloader;
     }
 
-    public function resolve(iterable $arguments = []): iterable
+    public function resolve($arguments = [])
     {
         $versionParser = new VersionParser();
 
