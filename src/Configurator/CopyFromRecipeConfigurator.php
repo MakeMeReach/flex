@@ -30,7 +30,7 @@ class CopyFromRecipeConfigurator extends AbstractConfigurator
         $this->removeFiles($config, $recipe->getFiles(), getcwd());
     }
 
-    private function copyFiles(iterable $manifest, iterable $files, string $to): void
+    private function copyFiles($manifest, $files, string $to): void
     {
         foreach ($manifest as $source => $target) {
             $target = $this->options->expandTargetDir($target);
@@ -42,7 +42,7 @@ class CopyFromRecipeConfigurator extends AbstractConfigurator
         }
     }
 
-    private function copyDir(string $source, string $target, iterable $files): void
+    private function copyDir(string $source, string $target, $files): void
     {
         foreach ($files as $file => $data) {
             if (0 === strpos($file, $source)) {
@@ -68,7 +68,7 @@ class CopyFromRecipeConfigurator extends AbstractConfigurator
         }
     }
 
-    private function removeFiles(iterable $manifest, iterable $files, string $to): void
+    private function removeFiles($manifest, $files, string $to): void
     {
         foreach ($manifest as $source => $target) {
             $target = $this->options->expandTargetDir($target);

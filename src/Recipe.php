@@ -55,7 +55,7 @@ class Recipe
         return $this->data['manifest'];
     }
 
-    public function getFiles(): iterable
+    public function getFiles()
     {
         return $this->data['files'] ?? [];
     }

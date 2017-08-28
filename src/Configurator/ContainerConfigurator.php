@@ -40,7 +40,7 @@ class ContainerConfigurator extends AbstractConfigurator
         file_put_contents($target, implode('', $lines));
     }
 
-    private function addParameters(iterable $parameters): void
+    private function addParameters($parameters): void
     {
         $target = getcwd().'/config/services.yaml';
         $lines = [];

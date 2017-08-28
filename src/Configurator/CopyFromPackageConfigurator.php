@@ -32,7 +32,7 @@ class CopyFromPackageConfigurator extends AbstractConfigurator
         $this->removeFiles($config, $packageDir, getcwd());
     }
 
-    private function copyFiles(iterable $manifest, string $from, string $to): void
+    private function copyFiles($manifest, string $from, string $to): void
     {
         foreach ($manifest as $source => $target) {
             $target = $this->options->expandTargetDir($target);
@@ -50,7 +50,7 @@ class CopyFromPackageConfigurator extends AbstractConfigurator
         }
     }
 
-    private function removeFiles(iterable $manifest, string $from, string $to): void
+    private function removeFiles($manifest, string $from, string $to): void
     {
         foreach ($manifest as $source => $target) {
             $target = $this->options->expandTargetDir($target);

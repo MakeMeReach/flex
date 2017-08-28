@@ -174,7 +174,7 @@ class Downloader
         }
     }
 
-    private function fetchFile(string $url, string $cacheKey, iterable $headers): Response
+    private function fetchFile(string $url, string $cacheKey, $headers): Response
     {
         $options = $this->getOptions($headers);
         $retries = 3;
@@ -204,7 +204,7 @@ class Downloader
         }
     }
 
-    private function fetchFileIfLastModified(string $url, string $cacheKey, string $lastModifiedTime, iterable $headers): Response
+    private function fetchFileIfLastModified(string $url, string $cacheKey, string $lastModifiedTime, $headers): Response
     {
         $headers[] = 'If-Modified-Since: '.$lastModifiedTime;
         $options = $this->getOptions($headers);

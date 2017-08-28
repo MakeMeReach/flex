@@ -53,7 +53,7 @@ class BundlesConfigurator extends AbstractConfigurator
         $this->dump($file, $registered);
     }
 
-    private function parse(iterable $manifest, iterable $registered): iterable
+    private function parse($manifest, $registered)
     {
         $bundles = [];
         foreach ($manifest as $class => $envs) {
@@ -65,7 +65,7 @@ class BundlesConfigurator extends AbstractConfigurator
         return $bundles;
     }
 
-    private function load(string $file): iterable
+    private function load(string $file)
     {
         $bundles = file_exists($file) ? (require $file) : [];
         if (!is_array($bundles)) {
@@ -75,7 +75,7 @@ class BundlesConfigurator extends AbstractConfigurator
         return $bundles;
     }
 
-    private function dump(string $file, iterable $bundles): void
+    private function dump(string $file, $bundles): void
     {
         $contents = "<?php\n\nreturn [\n";
         foreach ($bundles as $class => $envs) {
