@@ -34,7 +34,7 @@ class CopyFromRecipeConfigurator extends AbstractConfigurator
     {
         foreach ($manifest as $source => $target) {
             $target = $this->options->expandTargetDir($target);
-            if ('/' === $source[-1]) {
+            if (array_key_exists(-1, $source) && '/' === $source[-1]) {
                 $this->copyDir($source, $to.'/'.$target, $files);
             } else {
                 $this->copyFile($to.'/'.$target, $files[$source]['contents'], $files[$source]['executable']);
